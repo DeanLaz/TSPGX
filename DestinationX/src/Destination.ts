@@ -1,7 +1,7 @@
-import faker from "faker";
-
-export class User {
+import faker from "faker"
+export class Destination {
   name: string;
+  slogan: string;
   location: {
     lat: number;
     lng: number;
@@ -9,14 +9,13 @@ export class User {
 
 
   constructor() {
-    this.name = faker.name.firstName();
+    this.name = faker.company.companyName();
+    this.slogan = faker.company.catchPhrase();
     this.location = {
       lat: parseFloat(faker.address.latitude()),
       lng: parseFloat(faker.address.latitude())
     }
-    // this.location.lat = Number(faker.address.latitude());
-    // this.location.lng = Number(faker.address.longitude());
+
   }
 }
-
 
