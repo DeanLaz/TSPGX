@@ -1,18 +1,15 @@
-
-import {Sorter }from "./Sorter"
+import { Sorter } from "./Sorter";
 class Node {
   next: Node | null = null;
-    
-  constructor(public data: number) {
 
-  }
+  constructor(public data: number) {}
 }
 
-export class LinkedList extends Sorter{
-  head: Node | null = null
+export class LinkedList extends Sorter {
+  head: Node | null = null;
 
   add(data: number): void {
-    const node = new Node(data)
+    const node = new Node(data);
     if (!this.head) {
       this.head = node;
       return;
@@ -30,34 +27,33 @@ export class LinkedList extends Sorter{
       return 0;
     }
     let length = 1;
-    let node = this.head
+    let node = this.head;
     while (node.next) {
       length++;
-      node = node.next
+      node = node.next;
     }
-    return length
+    return length;
   }
   at(index: number): Node {
     if (!this.head) {
-      throw new Error("Index Null")
+      throw new Error("Index Null");
     }
-    let counter = 0
-    let node: Node | null = this.head
+    let counter = 0;
+    let node: Node | null = this.head;
     while (node) {
       if (counter === index) {
         return node;
+      }
+      counter++;
+      node = node.next;
     }
-    counter++
-    node = node.next
-    }
-    throw new Error("Index null")
+    throw new Error("Index null");
   }
   compare(leftIndex: number, rightIndex: number): boolean {
     if (!this.head) {
-      throw new Error("list is Empty!")
+      throw new Error("list is Empty!");
     }
-    return this.at(leftIndex).data > this.at(rightIndex).data
-
+    return this.at(leftIndex).data > this.at(rightIndex).data;
   }
 
   swap(leftIndex: number, rightIndex: number): void {
@@ -70,9 +66,9 @@ export class LinkedList extends Sorter{
 
   print(): void {
     if (!this.head) {
-      return
+      return;
     }
-    let node: Node | null = this.head
+    let node: Node | null = this.head;
     while (node) {
       console.log(node.data);
       node = node.next;

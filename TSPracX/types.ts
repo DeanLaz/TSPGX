@@ -1,12 +1,9 @@
 const today = new Date();
 today.getMinutes();
 
-
 const person = {
-    age: 20
-}
+  age: 20,
+};
 
-class Color {
-
-}
+class Color {}
 const red = new Color();

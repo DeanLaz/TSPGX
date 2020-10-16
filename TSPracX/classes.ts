@@ -1,8 +1,5 @@
-class Robot{
-
-  constructor(public color: string) {
-
-  }
+class Robot {
+  constructor(public color: string) {}
   public Beep(): void {
     console.log("Beep");
   }
@@ -11,7 +8,7 @@ class Robot{
     console.log("Bop");
   }
 }
-const robot = new Robot("Black")
+const robot = new Robot("Black");
 robot.Beep();
 robot.Bop();
 
@@ -19,7 +16,7 @@ class SmartRobot extends Robot {
   constructor(public wheels: number, color: string) {
     super(color);
   }
- public Beep(): void {
+  public Beep(): void {
     console.log("Beep I'm Smart");
   }
 
@@ -31,13 +28,11 @@ class SmartRobot extends Robot {
     console.log("Boop I'm Smart");
   }
   startRolling(): void {
-    this.Boop()
-    this.Beep()
+    this.Boop();
+    this.Beep();
   }
 }
 
-
-const smartRobot = new SmartRobot(4, "Dark Green")
+const smartRobot = new SmartRobot(4, "Dark Green");
 smartRobot.Beep();
 smartRobot.startRolling();
-

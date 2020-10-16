@@ -1,13 +1,13 @@
-import { User } from "./User"
-import { Destination } from './Destination';
-import { Map } from "./Map"
+import { User } from "./User";
+import { Destination } from "./Destination";
+import { Map } from "./Map";
 
-const user = new User()
-const destination = new Destination()
-const map = new Map("map")
+const user = new User();
+const destination = new Destination();
+const map = new Map("map");
 
 map.addMarker(user);
-map.addMarker(destination)
+map.addMarker(destination);
 
 // const user = new User();
 // const destination = new Destination();
@@ -25,4 +25,3 @@ map.addMarker(destination)
 // });
 
 // map
-

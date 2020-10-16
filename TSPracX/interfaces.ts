@@ -7,11 +7,10 @@ interface Vehicle {
   broken: boolean;
   summary(): string;
 }
-  
+
 interface Reportable {
   summary(): string;
-  }
-
+}
 
 // CARS
 
@@ -20,27 +19,29 @@ const Civic = {
   name: "civic",
   year: 2000,
   broken: true,
-  summary(): string { return  `I'm Deans Civic`
-}
-}
+  summary(): string {
+    return `I'm Deans Civic`;
+  },
+};
 
 const Ferrari = {
   owner: "Dean",
   name: "Ferrari",
   year: 2019,
   broken: false,
-  summary(): string { return `I'm Deans Ferrari` },
-}
+  summary(): string {
+    return `I'm Deans Ferrari`;
+  },
+};
 
 // PRINT VEHICLES WITH INTERFACE MODEL
 
 const printVehicle = (vehicle: Vehicle): void => {
-console.log(vehicle)
-}
+  console.log(vehicle);
+};
 
-printVehicle(Civic)
-printVehicle(Ferrari)
-
+printVehicle(Civic);
+printVehicle(Ferrari);
 
 // CARS
 
@@ -49,29 +50,29 @@ const drinker = {
   carbonated: true,
   sugar: 2000,
   summary(): string {
-    return "Drink Drink"
-  }
-}
+    return "Drink Drink";
+  },
+};
 
 const pepsicola = {
   color: "brown",
   carbonated: true,
   sugar: 2000,
   summary(): string {
-    return `PEPSI PEPSI`
-  }
-}
+    return `PEPSI PEPSI`;
+  },
+};
 
 // PRINT VEHICLES WITH INTERFACE MODEL
 
 const printReport = (item: Reportable): void => {
-    console.log(item);
-  }
+  console.log(item);
+};
 
-printReport(drinker)
+printReport(drinker);
 printReport(pepsicola);
 
-// CODE REUSE 
+// CODE REUSE
 
 // Create functions that accept arguments hat are types with interfaces,
 // objects/classes can decide to "implement" a given interface to work with a function
