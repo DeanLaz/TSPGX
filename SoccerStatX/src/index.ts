@@ -1,28 +1,27 @@
-import fs from "fs";
 import { CSVReader } from "./CSVReader";
+import { MatchReader } from "./MatchReader";
+import { MatchResult } from "./MatchResult";
+const csvReader = new CSVReader("./football.csv");
 
-const reader = new CSVReader("./football.csv");
-reader.read();
-// enu, // ENUMERATION
-// ENUMS ARE BASICALLY OBJECTS THAT HAVE CLOSELY RELATED VALUES
+const matchReader = new MatchReader(csvReader);
+matchReader.load();
 
-enum matchResult {
-  HomeWin = "H",
-  AwayWin = "A",
-  Draw = "D",
-}
-// const MATCH_RESULT = {
-//   HomeWin: "H",
-//   AwayWin: "A",
-//   Draw: "D",
-// };
+// const dateOfFirstMatch = reader.data[0][0];
+
+// console.log(reader.data);
+
+// enum matchResult { // enum or ENUMERATION == ENUMS ARE BASICALLY OBJECTS THAT HAVE CLOSELY RELATED VALUES
+//   HomeWin = "H",
+//   AwayWin = "A",
+//   Draw = "D",
+// }
 
 let manUnitedWins = 0;
 
-for (let match of reader.data) {
-  if (match[1] === "Man United" && match[5] === matchResult.HomeWin) {
+for (let match of matchReader.matches) {
+  if (match[1] === "Man United" && match[5] === MatchResult.HomeWin) {
     manUnitedWins++;
-  } else if (match[2] === "Man United" && match[5] === matchResult.AwayWin) {
+  } else if (match[2] === "Man United" && match[5] === MatchResult.AwayWin) {
     manUnitedWins++;
   }
 }
