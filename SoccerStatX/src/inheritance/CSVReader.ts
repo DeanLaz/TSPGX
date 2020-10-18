@@ -1,5 +1,4 @@
 import fs from "fs";
-import { MatchResult } from "./MatchResult";
 import { MatchReader } from "./MatchReader";
 type MatchData = [Date, string, string, number, number, MatchResult, string];
 export abstract class CSVReader<T> {
