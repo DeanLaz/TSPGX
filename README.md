@@ -4,7 +4,12 @@ Typescript Courses Project Playground
 
 ### TSX - TypeScriptX
 
-A Typescript Web Framework
+A Typescript Web Framework - User Form
+
+## Technologies
+
+- Typescript
+- NPM
 
 ### DestinationX
 
