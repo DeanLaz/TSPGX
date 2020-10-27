@@ -1,9 +1,24 @@
-import { User } from "./models/User";
+import { Collection } from "./models/Collection";
 
-const user = User.buildUser({ id: 1, name: "DEANS NEWEST NAME" });
+const collection = new Collection("http://localhost:3000/users");
 
-const { on, trigger, fetch, save } = user;
-on("change", () => {
-  console.log(user);
+collection.on("change", () => {
+  console.log(collection);
 });
-fetch();
+collection.fetch();
+
+// import axios, { AxiosResponse } from "axios";
+
+// axios.get("http://localhost:3000/users").then((response: AxiosResponse) => {
+//   console.log(response.data);
+// });
+
+// import { User } from "./models/User";
+
+// const user = User.buildUser({ id: 1, name: "DEANS NEWEST NAME" });
+
+// const { on, trigger, fetch, save } = user;
+// on("change", () => {
+//   console.log(user);
+// });
+// fetch();
