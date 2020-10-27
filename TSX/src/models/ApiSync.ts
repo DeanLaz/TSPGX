@@ -5,7 +5,7 @@ interface HasId {
 }
 
 // USERPROPS INTERFACE IS OPTIONAL SO HasId Should be OPTIONAL
-export class Sync<T extends HasId> {
+export class ApiSync<T extends HasId> {
   constructor(public rootUrl: string) {}
   fetch = (id: number): AxiosPromise => {
     return axios.get(`${this.rootUrl}/${id}`);
