@@ -1,8 +1,15 @@
-import { UserForm } from "./views/UserForm";
+import { UserEdit } from "./views/UserEdit";
+import { User } from "./models/User";
 
-const userForm = new UserForm(document.getElementById("root"));
-
-userForm.render();
+const ROOT = document.getElementById("root");
+const user = User.buildUser({ name: "Dean", age: 23 });
+if (ROOT) {
+  const userEdit = new UserEdit(ROOT, user);
+  userEdit.render();
+  console.log(userEdit);
+} else {
+  throw new Error("Root element not found");
+}
 
 // import axios, { AxiosResponse } from "axios";
 
