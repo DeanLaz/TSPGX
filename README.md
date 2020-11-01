@@ -67,4 +67,6 @@ Practice Plaground for Typescript Syntax & Methods
 
 - Typescript
 
-Stephen Grider "Typescript: The Complete Developers Guide"
+#### Stephen Grider Course
+
+- Typescript: The Complete Developers Guide"
