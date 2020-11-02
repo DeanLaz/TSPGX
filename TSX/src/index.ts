@@ -1,28 +1,20 @@
-import { UserEdit } from "./views/UserEdit";
-import { User } from "./models/User";
+import { UserList } from "./views/UserList";
+import { Collection } from "./models/Collection";
+import { UserProps, User } from "./models/User";
 
-const ROOT = document.getElementById("root");
-const user = User.buildUser({ name: "Dean", age: 23 });
-if (ROOT) {
-  const userEdit = new UserEdit(ROOT, user);
-  userEdit.render();
-  console.log(userEdit);
-} else {
-  throw new Error("Root element not found");
-}
+const users = new Collection(
+  "http://localhost:3000/users",
+  (json: UserProps) => {
+    return User.buildUser(json);
+  }
+);
 
-// import axios, { AxiosResponse } from "axios";
+users.on("change", () => {
+  const root = document.getElementById("root");
 
-// axios.get("http://localhost:3000/users").then((response: AxiosResponse) => {
-//   console.log(response.data);
-// });
+  if (root) {
+    new UserList(root, users).render();
+  }
+});
 
-// import { User } from "./models/User";
-
-// const user = User.buildUser({ id: 1, name: "DEANS NEWEST NAME" });
-
-// const { on, trigger, fetch, save } = user;
-// on("change", () => {
-//   console.log(user);
-// });
-// fetch();
+users.fetch();
