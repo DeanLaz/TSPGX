@@ -44,13 +44,12 @@ Practice Plaground for Typescript Syntax & Methods
 ## Credit to:
 
 <<<<<<< HEAD
+
 #### Technologies
 
 - Typescript
 
 #### Stephen Grider Course
 
-- Typescript: The Complete Developers Guide"
-=======
-Stephen Grider "Typescript: The Complete Developers Guide"
->>>>>>> parent of caebf0c... README
+- # Typescript: The Complete Developers Guide"
+  Stephen Grider "Typescript: The Complete Developers Guide"
