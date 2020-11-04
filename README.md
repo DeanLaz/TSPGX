@@ -43,8 +43,6 @@ Practice Plaground for Typescript Syntax & Methods
 
 ## Credit to:
 
-<<<<<<< HEAD
-
 #### Technologies
 
 - Typescript
